@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Helper</title>
+    <link rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="start">
+        <div class="game-title">
+            <img class="title" src="./img/title.png">
+        </div>
+        <img class="preview" src="./img/preview.png">
+        <button class="startButton">
+            <p class="words"><img src="./img/arrow.png" class="arrowHead"> START GAME</p>
+        </button>
+    </div>
+    <div class="game hide">
+        <div class="top">
+            <p>Help the animals return home!</p>
+        </div>
+        <div class="animal right"></div>
+        <div class="wrong hide"> Try Again!</div>
+        <div class="rabbitR hide">
+            <img src="./img/moveArrow.png">
+
+        </div>
+        <div class="catR hide">
+            <img src="./img/moveArrow.png">
+        </div>
+        <div class="options">
+            <button class="btn1">
+                <img src="./img/catHouse.png">
+                <p class="numberC">0/0</p>
+            </button>
+            <button class="btn2">
+                <img src="./img/rabbitHouse.png">
+                <p class="numberR">0/0</p>
+            </button>
+        </div>
+    </div>
+    <div class="final hide">
+        <div class="game-title">
+            <img class="title" src="./img/title.png">
+        </div>
+        <div class="text">
+            <p>Everyone is Home!</p>
+            <p>Safe & Sound</p>
+        </div>
+        <img class="image" src="./img/sleep.png">
+        <button class="restart">
+            <p class="words"><img src="./img/again.png" class="arrowHead">PLAY AGAIN</p>
+        </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
