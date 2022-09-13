@@ -193,3 +193,47 @@ body{
     align-items: center;
     }
 }
+
+/*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1199px){
+    body{
+      width: 100%;
+    }
+    .start, .howToPlay, .game,.final, .wrong, .rabbitR, .catR{
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .animal{
+        margin-bottom: 50px;
+    }
+    .catR, .rabbitR{
+        margin-top: -210px;
+    }
+    .wrong{
+        margin-top: -205px;
+    }
+}
+
+
+/*desktop*/
+@media screen and (min-width:1200px){
+    body{
+      width: 100%;
+    }
+    .start, .howToPlay,.game,.final, .wrong, .rabbitR, .catR{
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .catR, .rabbitR{
+        margin-top: 50px;
+    }
+    .wrong{
+        margin-top: 40px;
+    }
+    .preview{
+        max-width: 300px;
+    }
+    .startButton, .restart{
+        max-width: 250px;
+    }
+}
