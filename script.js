@@ -11,6 +11,7 @@ const wrong = document.querySelector(".wrong")
 const catRight = document.querySelector(".catR")
 const rabbitRight = document.querySelector(".rabbitR")
 const restart = document.querySelector(".restart")
+const body = document.querySelector("body")
 
 let rabbitCount
 let catCount
@@ -25,9 +26,9 @@ let current
 let select
 let animation
 
-const rabbits = ["pinkR", "brownR", "greyR"]
+const rabbits = [{image:"pinkR", text:"#CB6875"}, {image:"brownR", text:"#9B6842"}, {image:"greyR", text:"#858585"}]
 
-const cats = ["blueC", "orangeC", "greyC"]
+const cats = [{image:"blueC", text:"#4BADAC"}, {image: "orangeC", text:"#FD8F41"}, {image:"greyC", text:"#858585"}]
 
 startButton.addEventListener("click", () => {
     start.classList.add("hide")
@@ -41,6 +42,7 @@ restart.addEventListener("click", () => {
 
 function Began(){
     game.classList.remove("hide")
+    body.style.backgroundColor = "#E9E9E9"
     rabbitCount = catCount = 0
     rabbitDone = catDone = select = false
     Total = Math.floor(Math.random() * 5) + 1
@@ -51,6 +53,7 @@ function Began(){
 
 function Question(){
     if(rabbitCount == Total && catCount == Total){
+        body.style.backgroundColor = "#44347A"
         game.classList.add("hide")
         final.classList.remove("hide")
     }
@@ -71,10 +74,14 @@ function Question(){
     }
 
     if(current == 0){
-        animal.innerHTML = `<img src="./img/${rabbits[color]}.png">`
+        animal.innerHTML = `<img src="./img/${rabbits[color].image}.png">
+        <p>Hello, I am Rabbit</p>`
+        animal.style.color = `${rabbits[color].text}`
     }
     if(current == 1){
-        animal.innerHTML = `<img src="./img/${cats[color]}.png">`
+        animal.innerHTML = `<img src="./img/${cats[color].image}.png">
+        <p>Hello, I am Cat</p>`
+        animal.style.color = `${cats[color].text}`
     }
     let delayselect = setTimeout(() => {
         select = true
