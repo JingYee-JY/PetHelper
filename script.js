@@ -11,6 +11,7 @@ const wrong = document.querySelector(".wrong")
 const catRight = document.querySelector(".catR")
 const rabbitRight = document.querySelector(".rabbitR")
 const restart = document.querySelector(".restart")
+const home = document.querySelector(".home")
 const body = document.querySelector("body")
 
 let rabbitCount
@@ -38,6 +39,11 @@ startButton.addEventListener("click", () => {
 restart.addEventListener("click", () => {
     final.classList.add("hide")
     Began()
+})
+
+home.addEventListener("click", () => {
+    final.classList.add("hide")
+    start.classList.remove("hide")
 })
 
 function Began(){
