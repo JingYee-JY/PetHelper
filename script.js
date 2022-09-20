@@ -109,7 +109,7 @@ catHouse.addEventListener("click", () => {
         }, 2000);
           return
     }
-    else{
+    if(select == true){
         wrong.classList.remove("hide")
         let delaywrong = setTimeout(() => {
             wrong.classList.add("hide")
@@ -132,7 +132,7 @@ rabbitHouse.addEventListener("click", () => {
         }, 2000);
           return
     }
-    else{
+    if(select == true){
         wrong.classList.remove("hide")
         let delaywrong = setTimeout(() => {
             wrong.classList.add("hide")
