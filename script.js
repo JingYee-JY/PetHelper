@@ -11,7 +11,6 @@ const wrong = document.querySelector(".wrong")
 const catRight = document.querySelector(".catR")
 const rabbitRight = document.querySelector(".rabbitR")
 const restart = document.querySelector(".restart")
-const home = document.querySelector(".home")
 const body = document.querySelector("body")
 
 let rabbitCount
@@ -37,11 +36,6 @@ startButton.addEventListener("click", () => {
 })
 
 restart.addEventListener("click", () => {
-    final.classList.add("hide")
-    Began()
-})
-
-home.addEventListener("click", () => {
     final.classList.add("hide")
     start.classList.remove("hide")
 })
@@ -81,12 +75,12 @@ function Question(){
 
     if(current == 0){
         animal.innerHTML = `<img src="./img/${rabbits[color].image}.png">
-        <p>Hello, I am Rabbit</p>`
+        <p>Hello, I am Rabbit.</p>`
         animal.style.color = `${rabbits[color].text}`
     }
     if(current == 1){
         animal.innerHTML = `<img src="./img/${cats[color].image}.png">
-        <p>Hello, I am Cat</p>`
+        <p>Hello, I am Cat.</p>`
         animal.style.color = `${cats[color].text}`
     }
     let delayselect = setTimeout(() => {

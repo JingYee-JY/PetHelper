@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable =no">
     <title>Pet Helper</title>
     <link rel="stylesheet" 
         href="https://fonts.googleapis.com/css2?family=Lilita One:wght@400;600&display=swap">
@@ -21,13 +21,12 @@
     </div>
     <div class="game hide">
         <div class="top">
-            <p>Help the animals return home</p>
-            <p>by tapping on their house!</p>
+            <p>Tap and help the animals return home</p>
         </div>
         <div class="middle">
             <div class="animal right"></div>
 
-        <div class="wrong hide"> Try Again!</div>
+        <div class="wrong hide"> Try again!</div>
         <div class="rabbitR hide">
             <img src="./img/moveArrow.png">
 
@@ -49,18 +48,18 @@
     </div>
     <div class="final hide">
         <div class="game-title">
-            <img class="title" src="./img/title.png">
+            <img class="title endTitle" src="./img/title.png">
         </div>
         <div class="text">
-            <p>Everyone is Home!</p>
-            <p>Safe & Sound</p>
+            <p>Everyone is home!</p>
+            <p>safe & sound</p>
         </div>
         <img class="image" src="./img/sleep.png">
         <button class="restart">
             <p class="words"><img src="./img/again.png" class="arrowHead">Play again</p>
         </button>
-        <button class="home">
-            <p class="words"><img src="./img/home.png" class="arrowHead">Back to Home</p>
+        <button class="home" onclick="window.location.href='https://gimme.sg/activations/dementia/';">
+            <p class="words"><img src="./img/home.png" class="arrowHead">Back to home</p>
         </button>
     </div>
     <script src="script.js"></script>
