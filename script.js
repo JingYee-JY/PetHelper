@@ -12,6 +12,10 @@ const catRight = document.querySelector(".catR")
 const rabbitRight = document.querySelector(".rabbitR")
 const restart = document.querySelector(".restart")
 const body = document.querySelector("body")
+const homeButton = document.querySelector(".home")
+
+const clickSound = document.getElementById("click")
+const completed = document.getElementById("completed")
 
 let rabbitCount
 let catCount
@@ -31,13 +35,28 @@ const rabbits = [{image:"pinkR", text:"#CB6875"}, {image:"brownR", text:"#9B6842
 const cats = [{image:"blueC", text:"#4BADAC"}, {image: "orangeC", text:"#FD8F41"}, {image:"greyC", text:"#858585"}]
 
 startButton.addEventListener("click", () => {
-    start.classList.add("hide")
-    Began()
+    playClickSound()
+    //controls amd buttons visibility
+    let delay = setTimeout(() => {
+        start.classList.add("hide")
+        Began()
+    }, 200);
 })
 
 restart.addEventListener("click", () => {
-    final.classList.add("hide")
-    start.classList.remove("hide")
+    playClickSound()
+    //controls amd buttons visibility
+    let delay = setTimeout(() => {
+        final.classList.add("hide")
+        start.classList.remove("hide")
+    }, 200);
+})
+
+homeButton.addEventListener("click", () => {
+    playClickSound()
+    let delay = setTimeout(() => {
+      location.assign('https://gimme.sg/activations/dementia/');
+    }, 200);
 })
 
 function Began(){
@@ -53,6 +72,8 @@ function Began(){
 
 function Question(){
     if(rabbitCount == Total && catCount == Total){
+        completed.currentTime = 0;
+        completed.play()
         body.style.backgroundColor = "#44347A"
         game.classList.add("hide")
         final.classList.remove("hide")
@@ -74,14 +95,10 @@ function Question(){
     }
 
     if(current == 0){
-        animal.innerHTML = `<img src="./img/${rabbits[color].image}.png">
-        <p>Hello, I am Rabbit.</p>`
-        animal.style.color = `${rabbits[color].text}`
+        animal.src = `./img/${rabbits[color].image}.png`
     }
     if(current == 1){
-        animal.innerHTML = `<img src="./img/${cats[color].image}.png">
-        <p>Hello, I am Cat.</p>`
-        animal.style.color = `${cats[color].text}`
+        animal.src = `./img/${cats[color].image}.png`
     }
     let delayselect = setTimeout(() => {
         select = true
@@ -89,6 +106,7 @@ function Question(){
 }
 
 catHouse.addEventListener("click", () => {
+    playClickSound()
     if(current == 1 && select == true){
         select = false
         animal.classList.add("right")
@@ -112,6 +130,7 @@ catHouse.addEventListener("click", () => {
 })
 
 rabbitHouse.addEventListener("click", () => {
+    playClickSound()
     if(current == 0 && select == true){
         select = false
         animal.classList.add("right")
@@ -133,3 +152,14 @@ rabbitHouse.addEventListener("click", () => {
           }, 500);
     }
 })
+
+function playClickSound(){
+    console.log(clickSound)
+    clickSound.currentTime = 0
+    clickSound.play()
+}
+
+/*prevent double tag zoom*/
+document.addEventListener('dblclick', function(event) {
+event.preventDefault();
+}, { passive: false });

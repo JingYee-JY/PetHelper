@@ -21,19 +21,20 @@
     </div>
     <div class="game hide">
         <div class="top">
-            <p>Tap and help the animals return home</p>
+            <p>Help the animals return home.</p>
         </div>
         <div class="middle">
-            <div class="animal right"></div>
+            <img class="animal right">
+            <div class="outPut">
+                <div class="wrong hide"> Try again!</div>
+                <div class="rabbitR hide">
+                    <img src="./img/moveArrow1.png">
 
-        <div class="wrong hide"> Try again!</div>
-        <div class="rabbitR hide">
-            <img src="./img/moveArrow.png">
-
-        </div>
-        <div class="catR hide">
-            <img src="./img/moveArrow.png">
-        </div>
+                </div>
+                <div class="catR hide">
+                    <img src="./img/moveArrow.png">
+                </div>
+            </div>
         </div>
         <div class="options">
             <button class="btn1">
@@ -58,10 +59,14 @@
         <button class="restart">
             <p class="words"><img src="./img/again.png" class="arrowHead">Play again</p>
         </button>
-        <button class="home" onclick="window.location.href='https://gimme.sg/activations/dementia/';">
+        <button class="home">
             <p class="words"><img src="./img/home.png" class="arrowHead">Back to home</p>
         </button>
     </div>
+
+    <audio id="click" src="sound/click.wav"></audio>
+      <audio id="completed" src="./sound/completed.wav"></audio>
+
     <script src="script.js"></script>
 </body>
 </html>
